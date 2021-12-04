@@ -12,6 +12,6 @@ export class AppComponent {
   constructor(private readonly httpClient: HttpClient) {}
 
   send(): void {
-    this.httpClient.get('/test').subscribe((response) => console.log(response));
+    this.httpClient.get('http://example-nginx/test').subscribe((response) => console.log(response));
   }
 }
