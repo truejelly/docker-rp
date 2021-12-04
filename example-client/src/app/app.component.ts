@@ -11,9 +11,7 @@ export class AppComponent {
 
   constructor(private readonly httpClient: HttpClient) {}
 
-  send(port?: string): void {
-    this.httpClient
-      .get(`${window.origin}${port}/test`)
-      .subscribe((response) => console.log(response));
+  send(): void {
+    this.httpClient.get('/test').subscribe((response) => console.log(response));
   }
 }
