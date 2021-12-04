@@ -10,6 +10,5 @@ RUN dotnet publish -c Release -o out
 
 FROM mcr.microsoft.com/dotnet/aspnet:6.0-alpine
 WORKDIR /app
-# EXPOSE 5002
 COPY --from=build-env /src/out .
 ENTRYPOINT [ "dotnet", "example-api.dll" ]
